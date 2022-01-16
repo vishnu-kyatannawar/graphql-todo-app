@@ -1,5 +1,7 @@
+import  { todos } from './db.js';
+
 const Query = {
-  todos: () => [],
+  todos: () => todos.list(),
 };
 
 export { Query };
