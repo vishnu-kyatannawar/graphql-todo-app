@@ -1,5 +1,5 @@
 const Query = {
-    greeting: () => 'Hello world from GraphQL'
-}
+  todos: () => [],
+};
 
 export { Query };

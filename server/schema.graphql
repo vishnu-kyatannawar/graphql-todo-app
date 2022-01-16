@@ -1,3 +1,8 @@
 type Query {
-    greeting: String
+    todos: [TODO]
+}
+
+type TODO {
+    id: ID!,
+    description: String
 }
