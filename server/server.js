@@ -2,6 +2,8 @@ import { ApolloServer, gql } from 'apollo-server-express';
 import { ApolloServerPluginDrainHttpServer } from 'apollo-server-core';
 import express from 'express';
 import http from 'http';
+import fs from 'fs';
+import * as resolvers from './resolvers.js';
 
 async function startApolloServer(typeDefs, resolvers) {
   const app = express();
@@ -18,16 +20,6 @@ async function startApolloServer(typeDefs, resolvers) {
   console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`);
 }
 
-const typeDefs = gql`
-    type Query {
-        greeting: String
-    }
-`;
-
-const resolvers = {
-    Query: {
-        greeting: () => 'Hello world from GraphQL'
-    }
-};
+const typeDefs = gql(fs.readFileSync('./schema.graphql', { encoding: 'utf-8' }));
 
 startApolloServer(typeDefs, resolvers);
