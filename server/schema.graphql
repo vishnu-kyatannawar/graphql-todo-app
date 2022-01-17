@@ -1,8 +1,13 @@
 type Query {
-    todos: [TODO]
+    todos: [TODO],
+    todo(id: ID): TODO
 }
 
 type TODO {
     id: ID!,
     description: String
+}
+
+type Mutation {
+    create(description: String): TODO,        
 }

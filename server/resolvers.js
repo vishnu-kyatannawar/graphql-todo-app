@@ -1,7 +1,14 @@
 import  { todos } from './db.js';
 
-const Query = {
+const Query = {  
   todos: () => todos.list(),
 };
 
-export { Query };
+const Mutation = {
+  create: (root, {description}) => {
+     const todoID = todos.create({description});
+     return todos.get(todoID);
+  }  
+};
+
+export { Query, Mutation };
