@@ -17,6 +17,10 @@ const Mutation = {
       return true;
     }
     return false;
+  },
+  update: (root, {id, description}) => {
+    todos.update({id, description});
+    return todos.get(id);
   }
 };
 
