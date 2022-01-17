@@ -9,5 +9,6 @@ type TODO {
 }
 
 type Mutation {
-    create(description: String): TODO,        
+    create(description: String): TODO,    
+    delete(id: ID): Boolean
 }
