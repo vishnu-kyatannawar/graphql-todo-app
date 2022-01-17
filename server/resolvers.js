@@ -1,6 +1,7 @@
 import  { todos } from './db.js';
 
-const Query = {  
+const Query = {
+  todo: (root, {id}) => todos.get(id),
   todos: () => todos.list(),
 };
 
