@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Container, Row, Col} from 'react-bootstrap';
+import {Container, Row, Col, Card, ListGroup} from 'react-bootstrap';
 
 function App() {
   return (
@@ -20,6 +20,22 @@ function App() {
                     </Row>
                     <Row>
                       <Col className="todo-box">
+                        <Container>
+                          {/* TODO: Here the input field will come to add todos */}
+                        </Container>
+                        <Container>
+                          <Row>
+                            <Col>
+                              <Card>
+                                <ListGroup variant="flush">
+                                  <ListGroup.Item>Cras justo odio</ListGroup.Item>
+                                  <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+                                  <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+                                </ListGroup>
+                              </Card>
+                            </Col>
+                          </Row>
+                        </Container>
                       </Col>
                     </Row>
                   </Container>
